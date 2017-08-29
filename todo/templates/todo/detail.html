@@ -16,7 +16,7 @@
       {% if todo_done %}
         Done<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
         <br><br>
-        <p>{{ todo_comment }}</p>
+        <p>Comment: {{ todo_comment }}</p>
         <a href="{% url 'todo:toggle_done' todoID %}"><button class="btn btn-warning" type="button" name="button">Not done</button></a>
         <br><br>
       {% else %}
@@ -40,36 +40,6 @@
         <a href="{% url 'todo:update' todoID %}"><button class="btn btn-primary" type="button">Update</button></a>
       </div>
     </div>
-
-<script>
-/*  $(function(){
-    var container = document.getElementsByClassName('container');
-    //var hammer = new Hammer(container);
-    Hammer(container).on("swipeleft", function(){
-      alert("left!");
-    });
-    Hammer(container).on("swiperight", function(){
-      alert("right!");
-    });
-
-  $(".left-arrow").click(function() {
-
-    });
-
-    $(".right-arrow").click(function() {
-
-    });
-
-/*    $(document).on("swipeleft", function(){
-      $.mobile.changePage("{% url 'todo:detail' prev_todo_id %}", { transition: "slide" });
-    });
-
-    $(document).on("swiperight", function(){
-      $.mobile.changePage("{% url 'todo:detail' next_todo_id %}", { transition: "slide", reverse: true });
-    });
-
-  });*/
-</script>
 
   </body>
 </html>
