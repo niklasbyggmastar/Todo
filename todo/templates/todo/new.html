@@ -1,0 +1,39 @@
+{% include 'todo/header.html' %}
+
+<div class="container">
+  <h1 class="text-center">Add todo</h1>
+  <form action="{% url 'todo:new' %}" method="post" id="new_todo_form">
+    {% csrf_token %}
+    <input class="form-control" type="text" name="todo_text" autocomplete="off">
+    <br>
+    <div class="col-md-6">
+      <input class="btn btn-success form-control" type="submit" value="Add">
+    </div>
+  </form>
+  <div class="col-md-6">
+    <a href="../"><button class="btn btn-info" type="button" name="button">Back</button></a>
+  </div>
+
+</div>
+
+<script>
+  $(function(){
+    $("#new_todo_form").validate({
+      rules:{
+        todo_text:{
+          required:true,
+          maxlength:50,
+        },
+      },
+      messages:{
+        todo_text:{
+          required:"Enter the todo!",
+          maxlength:"Max 50 characters!"
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

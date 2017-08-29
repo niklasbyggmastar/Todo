@@ -1,0 +1,38 @@
+{% include "todo/header.html"%}
+
+<div class="container">
+  <h1 class="text-center">Update todo {{ todoID }}</h1>
+  <p><label>Original todo: </label> {{ todo_text }}</p>
+  <form action="{% url 'todo:update' todoID %}" method="post" id="update_todo_form">
+    {% csrf_token %}
+    <input class="form-control" type="text" name="todo_text" autocomplete="off" placeholder="New todo...">
+    <br>
+    <div class="col-md-6">
+      <input class="btn btn-success form-control" type="submit" value="Update">
+    </div>
+  </form>
+  <div class="col-md-6">
+    <a href="{% url 'todo:detail' todoID %}"><button class="btn btn-info" type="button" name="button">Back</button></a>
+  </div>
+
+</div>
+
+<script>
+  $(function(){
+    $("#update_todo_form").validate({
+      rules:{
+        todo_text:{
+          required:true,
+        },
+      },
+      messages:{
+        todo_text:{
+          required:"Enter the todo!",
+        }
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

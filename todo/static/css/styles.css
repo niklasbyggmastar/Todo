@@ -1,0 +1,55 @@
+body{
+  background-image:url("/static/img/back.jpg");
+  /*background-repeat:no-repeat;*/
+  background-size:100%;
+}
+.btn{
+  width: 100%;
+}
+.glyphicon-ok{
+  color: green;
+}
+.glyphicon-remove{
+  color: rgb(210,27,27);
+}
+.left-arrow{
+  float:left;
+  font-size:50px;
+/*  margin-left:300px; */
+}
+.right-arrow{
+  float:right;
+  font-size:50px;
+/*  margin-right:300px; */
+}
+
+@media screen and (min-width:430px){
+  .container{
+    margin-top: 10px;
+    border-radius: 25px;
+    width: 450px;
+    height: 580px;
+    background-color: rgba(210,210,210,.86);
+  }
+  .todoes_list{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width:100%;
+    height: 400px;
+  }
+}
+@media screen and (max-width:430px){
+  .container{
+    margin-top: 10px;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(210,210,210,.86);
+  }
+  .todoes_list{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width:100%;
+    height: 60vh;
+  }
+}

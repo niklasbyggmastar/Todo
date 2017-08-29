@@ -1,0 +1,28 @@
+{% include "todo/header.html"%}
+
+<!--  <body> -->
+    <div class="container">
+      <h1 class="text-center">TODO</h1>
+      <a href="new"><button class="btn btn-success" type="button" name="button">New todo</button></a>
+      <hr>
+
+      <div class="todoes_list">
+        {% if recent_todoes %}
+          <ul>
+            {% for todo in recent_todoes %}
+              {% if todo.todo_done %}
+                <li><h4><a href="{% url 'todo:detail' todo.id %}">{{ todo.todo_text }}</a><span style="margin-left:15px" class="glyphicon glyphicon-ok" aria-hidden="true"></span></h4></li>
+              {% else %}
+                <li><h4><a href="{% url 'todo:detail' todo.id %}">{{ todo.todo_text }}</a></h4></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% else %}
+            <p class="text-center alert-danger">No todoes available.</p>
+          {% endif %}
+      </div>
+
+    </div>
+
+  </body>
+</html>
