@@ -33,7 +33,7 @@ def detail(request, todo_id):
     if (recent_comments):
         todo_comment = Comment.objects.get(pk=todo_id)
     else:
-        todo_comment = "No comments."
+        todo_comment = "-"
     context = {'todo_text': todo_text, 'todo_done': todo_done, 'todoID': todoID, 'todo_comment': todo_comment, 'next_todo_id':next_todo_id, 'prev_todo_id':prev_todo_id}
     return render(request, 'todo/detail.html', context)
 
