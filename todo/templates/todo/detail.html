@@ -16,9 +16,7 @@
       {% if todo_done %}
         Done<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
         <br><br>
-        {% if todo_comment %}
-          <p>Comment: {{ todo_comment }}</p>
-        {% endif %}
+        <p>Comment: {{ todo_comment }}</p>
         <a href="{% url 'todo:toggle_done' todoID %}"><button class="btn btn-warning" type="button" name="button">Not done</button></a>
         <br><br>
       {% else %}
