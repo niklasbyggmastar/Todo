@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ymgwgrf6&g2iwzq8v)&yd0*@i0$(2sne%hw)nx@-8(f!il#ua!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["nmb-todoapp.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost"]
 
 
 # Application definition
@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'apps.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db0tdphtadtq3n',
-        'USER': 'yxmlupbrdafbxo',
-        'PASSWORD': '128e4bd559b9ccc5081fbb923f3e4feff9a37bd51ec14497de3523b81b348ee1',
-        'HOST': 'ec2-107-22-171-11.compute-1.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -110,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Helsinki'
 
 USE_I18N = True
 

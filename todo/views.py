@@ -8,7 +8,6 @@ def index(request):
     return render(request, 'todo/index.html', context)
 
 def detail(request, todo_id):
-    #try:
     todo_text = Todo.objects.get(pk=todo_id)
     todoID = Todo.objects.get(pk=todo_id).id
     todoes = Todo.objects.all()
@@ -36,8 +35,6 @@ def detail(request, todo_id):
     else:
         todo_comment = "No comments."
     context = {'todo_text': todo_text, 'todo_done': todo_done, 'todoID': todoID, 'todo_comment': todo_comment, 'next_todo_id':next_todo_id, 'prev_todo_id':prev_todo_id}
-    #except:
-        #raise Http404("Todo does not exist!")
     return render(request, 'todo/detail.html', context)
 
 def new(request):

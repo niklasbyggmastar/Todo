@@ -12,6 +12,7 @@
         <h1 class="right-arrow"><a href="{% url 'todo:detail' prev_todo_id %}"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></h1>
       {% endif %}
       <h1 class="text-center"> {{ todo_text }} </h1>
+      <br>
       {% if todo_done %}
         Done<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
         <br><br>
